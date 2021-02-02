@@ -1,0 +1,16 @@
+name: semantic-pull-request
+author: Jose Fernandez (jose@clearscore.com), forked from Jan Amann <jan@amann.me>
+description: Ensure your PR title matches the iOS established format.
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'shield'
+  color: 'green'
+inputs:
+  subjectPattern:
+    description: "Configure additional validation for the subject based on a regex. E.g. '^(?![A-Z]).+$' ensures the subject doesn't start with an uppercase character."
+    required: false
+  subjectPatternError:
+    description: "If `subjectPattern` is configured, you can use this property to override the default error message that is shown when the pattern doesn't match. The variables `subject` and `title` can be used within the message."
+    required: false
